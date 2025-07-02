@@ -1,4 +1,4 @@
-http://example.com/2025/07/02/Transformers%20are%20Graph%20Neural%20Networks/
+http://example.com/2025/07/02/Transformers-are-Graph-Neural-Networks/
 http://example.com/2025/07/02/Git/
 http://example.com/2025/07/02/hello-world/
 http://example.com/2025/07/02/My-New-Post/

@@ -17,19 +17,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000">
   <meta name="theme-color" content="#f9fafb">
-  <title>YepingZhao</title>
+  <title>Transformers are Graph Neural Networks - YepingZhao</title>
 
   
     <meta name="description" content="Chaitanya K. Joshi 证明了 Transformer 架构在数学上等同于在全连接图上运行的图神经网络 (GNN)。这项工作解释了 Transformer 的经验成功部分归因于其通过密集矩阵运算实现的效率，这些运算针对现代硬件进行了高度优化，这与传统 GNN 通常的稀疏运算形成对比。 目录 引言 Transformer架构与自注意力机制 图神经网络与消息传递 建立形式等价性 硬件彩票">
 <meta property="og:type" content="article">
-<meta property="og:title" content="YepingZhao">
-<meta property="og:url" content="http://example.com/2025/07/02/Transformers%20are%20Graph%20Neural%20Networks/index.html">
+<meta property="og:title" content="Transformers are Graph Neural Networks">
+<meta property="og:url" content="http://example.com/2025/07/02/Transformers-are-Graph-Neural-Networks/index.html">
 <meta property="og:site_name" content="YepingZhao">
 <meta property="og:description" content="Chaitanya K. Joshi 证明了 Transformer 架构在数学上等同于在全连接图上运行的图神经网络 (GNN)。这项工作解释了 Transformer 的经验成功部分归因于其通过密集矩阵运算实现的效率，这些运算针对现代硬件进行了高度优化，这与传统 GNN 通常的稀疏运算形成对比。 目录 引言 Transformer架构与自注意力机制 图神经网络与消息传递 建立形式等价性 硬件彩票">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://paper-assets.alphaxiv.org/figures/2506.22084v1/img-0.jpeg">
-<meta property="article:published_time" content="2025-07-02T15:44:08.895Z">
-<meta property="article:modified_time" content="2025-07-02T15:45:11.565Z">
+<meta property="article:published_time" content="2025-07-02T15:47:43.000Z">
+<meta property="article:modified_time" content="2025-07-02T15:48:11.139Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="alphaXiv">
 <meta name="twitter:card" content="summary">
@@ -49,7 +49,7 @@
 
   
 
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"John Doe","sameAs":[]},"dateCreated":"2025-07-02T23:44:08+08:00","dateModified":"2025-07-02T23:45:11+08:00","datePublished":"2025-07-02T23:44:08+08:00","description":"","headline":"","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2025/07/02/Transformers%20are%20Graph%20Neural%20Networks/"},"publisher":{"@type":"Organization","name":"John Doe","sameAs":[]},"url":"http://example.com/2025/07/02/Transformers%20are%20Graph%20Neural%20Networks/","keywords":"alphaXiv","image":[]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"John Doe","sameAs":[]},"dateCreated":"2025-07-02T23:47:43+08:00","dateModified":"2025-07-02T23:48:11+08:00","datePublished":"2025-07-02T23:47:43+08:00","description":"","headline":"Transformers are Graph Neural Networks","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2025/07/02/Transformers-are-Graph-Neural-Networks/"},"publisher":{"@type":"Organization","name":"John Doe","sameAs":[]},"url":"http://example.com/2025/07/02/Transformers-are-Graph-Neural-Networks/","keywords":"alphaXiv","image":[]}</script>
   <link rel="stylesheet" href="https://cdn.staticfile.org/lxgw-wenkai-screen-webfont/1.6.0/lxgwwenkaiscreen.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body>
@@ -68,7 +68,7 @@
 
 
 
-<widget class="widget-wrapper recent post-list"><div class="widget-header dis-select"><span class="name">最近更新</span></div><div class="widget-body fs14"><a class="item title" href="/2025/07/02/Git/"><span class="title">Git</span></a><a class="item title" href="/2025/07/02/hello-world/"><span class="title">Hello World</span></a><a class="item title" href="/2025/07/02/My-New-Post/"><span class="title">My New Post</span></a></div></widget>
+<widget class="widget-wrapper recent post-list"><div class="widget-header dis-select"><span class="name">最近更新</span></div><div class="widget-body fs14"><a class="item title" href="/2025/07/02/Transformers-are-Graph-Neural-Networks/"><span class="title">Transformers are Graph Neural Networks</span></a><a class="item title" href="/2025/07/02/Git/"><span class="title">Git</span></a><a class="item title" href="/2025/07/02/hello-world/"><span class="title">Hello World</span></a><a class="item title" href="/2025/07/02/My-New-Post/"><span class="title">My New Post</span></a></div></widget>
 </div>
 <footer class="footer dis-select"><div class="social-wrap"></div></footer>
 </div></aside><div class="l_main" id="main">
@@ -81,7 +81,15 @@
   <div class="content">
     <div class="top bread-nav footnote"><div class="left"><div class="flex-row" id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a>
 <span class="sep"></span><a class="cap breadcrumb" href="/">文章</a><span class="sep"></span><a class="cap breadcrumb-link" href="/categories/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/">文献阅读笔记</a> <span class="sep"></span> <a class="cap breadcrumb-link" href="/categories/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/alphaXiv/">alphaXiv</a></div>
-<div class="flex-row" id="post-meta"><span class="text created">发布于：<time datetime="2025-07-02T15:44:08.895Z">2025-07-02</time></span><span class="sep updated"></span><span class="text updated">更新于：<time datetime="2025-07-02T15:45:11.565Z">2025-07-02</time></span></div></div></div>
+<div class="flex-row" id="post-meta"><span class="text created">发布于：<time datetime="2025-07-02T15:47:43.000Z">2025-07-02</time></span><span class="sep updated"></span><span class="text updated">更新于：<time datetime="2025-07-02T15:48:11.139Z">2025-07-02</time></span></div></div></div>
+    
+    <div class="bottom only-title">
+      
+      <div class="text-area">
+        <h1 class="text title"><span>Transformers are Graph Neural Networks</span></h1>
+        
+      </div>
+    </div>
     
   </div>
   </div><article class="md-text content"><p>Chaitanya K. Joshi 证明了 Transformer 架构在数学上等同于在全连接图上运行的图神经网络 (GNN)。这项工作解释了 Transformer 的经验成功部分归因于其通过密集矩阵运算实现的效率，这些运算针对现代硬件进行了高度优化，这与传统 GNN 通常的稀疏运算形成对比。</p>
