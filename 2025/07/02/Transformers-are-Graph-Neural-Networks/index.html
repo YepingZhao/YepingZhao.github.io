@@ -28,7 +28,7 @@
 <meta property="og:description" content="Chaitanya K. Joshi 证明了 Transformer 架构在数学上等同于在全连接图上运行的图神经网络 (GNN)。这项工作解释了 Transformer 的经验成功部分归因于其通过密集矩阵运算实现的效率，这些运算针对现代硬件进行了高度优化，这与传统 GNN 通常的稀疏运算形成对比。 目录  引言 Transformer架构与自注意力机制 图神经网络与消息传递 建">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-07-02T15:47:43.000Z">
-<meta property="article:modified_time" content="2025-07-02T15:48:11.139Z">
+<meta property="article:modified_time" content="2025-07-02T16:11:23.220Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="alphaXiv">
 <meta name="twitter:card" content="summary">
@@ -47,7 +47,7 @@
 
   
 
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"John Doe","sameAs":[]},"dateCreated":"2025-07-02T23:47:43+08:00","dateModified":"2025-07-02T23:48:11+08:00","datePublished":"2025-07-02T23:47:43+08:00","description":"","headline":"Transformers are Graph Neural Networks","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2025/07/02/Transformers-are-Graph-Neural-Networks/"},"publisher":{"@type":"Organization","name":"John Doe","sameAs":[]},"url":"http://example.com/2025/07/02/Transformers-are-Graph-Neural-Networks/","keywords":"alphaXiv","image":[]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"John Doe","sameAs":[]},"dateCreated":"2025-07-02T23:47:43+08:00","dateModified":"2025-07-03T00:11:23+08:00","datePublished":"2025-07-02T23:47:43+08:00","description":"","headline":"Transformers are Graph Neural Networks","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2025/07/02/Transformers-are-Graph-Neural-Networks/"},"publisher":{"@type":"Organization","name":"John Doe","sameAs":[]},"url":"http://example.com/2025/07/02/Transformers-are-Graph-Neural-Networks/","keywords":"alphaXiv","image":[]}</script>
   <link rel="stylesheet" href="https://cdn.staticfile.org/lxgw-wenkai-screen-webfont/1.6.0/lxgwwenkaiscreen.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body>
@@ -79,7 +79,7 @@
   <div class="content">
     <div class="top bread-nav footnote"><div class="left"><div class="flex-row" id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a>
 <span class="sep"></span><a class="cap breadcrumb" href="/">文章</a><span class="sep"></span><a class="cap breadcrumb-link" href="/categories/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/">文献阅读笔记</a> <span class="sep"></span> <a class="cap breadcrumb-link" href="/categories/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/alphaXiv/">alphaXiv</a></div>
-<div class="flex-row" id="post-meta"><span class="text created">发布于：<time datetime="2025-07-02T15:47:43.000Z">2025-07-02</time></span><span class="sep updated"></span><span class="text updated">更新于：<time datetime="2025-07-02T15:48:11.139Z">2025-07-02</time></span></div></div></div>
+<div class="flex-row" id="post-meta"><span class="text created">发布于：<time datetime="2025-07-02T15:47:43.000Z">2025-07-02</time></span><span class="sep updated"></span><span class="text updated">更新于：<time datetime="2025-07-02T16:11:23.220Z">2025-07-03</time></span></div></div></div>
     
     <div class="bottom only-title">
       
@@ -133,11 +133,9 @@ id="transformer架构与自注意力机制">Transformer架构与自注意力机�
 <p>论文首先建立了Transformer架构的数学基础，特别关注构成其计算核心的自注意力机制。在Transformer中，每个输入词元通过学习的线性投影转换为三个向量：查询（Q）、键（K）和值（V）表示。</p>
 <p>位置 <span class="math inline"><em>i</em></span> 的词元关注序列 <span
 class="math inline">𝒮</span> 中所有词元的自注意力操作计算如下：</p>
-<p><span class="math display">$$
-h_i^{\ell+1} = \sum_{j \in \mathcal{S}}
+<p><span class="math display">$$ h_i^{\ell+1} = \sum_{j \in \mathcal{S}}
 \text{softmax}_j\left(\frac{Q^{\ell}_i \cdot
-K^{\ell}_j}{\sqrt{d_k}}\right) V^{\ell}_j
-$$</span></p>
+K^{\ell}_j}{\sqrt{d_k}}\right) V^{\ell}_j $$</span></p>
 <p>其中softmax归一化确保注意力权重在所有位置上总和为一。这种公式允许每个词元潜在地关注序列中的其他所有词元，从而创建一种全连接的注意力模式。</p>
 <p>多头注意力通过并行计算多个注意力模式来扩展这一概念，每个模式侧重于词元之间关系的不同方面。所有注意力头的输出被连接起来，并通过额外的层，包括残差连接、层归一化和词元级前馈网络。</p>
 <h2 id="图神经网络与消息传递">图神经网络与消息传递</h2>
@@ -185,10 +183,8 @@ BLAS（基本线性代数子程序）操作进行高效并行化，使其计算�
 依赖于稀疏的消息传递操作，这些操作涉及在不规则图结构上的 gather-scatter
 计算。这些操作在当前的硬件架构上效率较低，导致训练速度较慢和扩展困难。</p>
 <p>Transformers 中的数学运算可以表示为：</p>
-<p><span class="math display">$$
-\text{Attention}(Q,K,V) =
-\text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)V
-$$</span></p>
+<p><span class="math display">$$ \text{Attention}(Q,K,V) =
+\text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)V $$</span></p>
 <p>这种公式利用了高度优化的密集矩阵乘法，而等效的 GNN
 操作通常需要在图邻接结构上进行效率较低的稀疏计算。</p>
 <h2 id="图-transformers-和混合方法">图 Transformers 和混合方法</h2>
